@@ -13,9 +13,9 @@
   <img src="src/assets/developer_activity.svg" width="400" height="500" >
 </div>
 
-## 🏠 [Homepage](https://saad-mrabet.me/)
+## 🏠 [Homepage](https://Zanan-Virani.me/)
 
-## ✨ [Demo](https://saad-mrabet.me/)
+## ✨ [Demo](https://Zanan-Virani.me/)
 
 <br>
 
@@ -60,10 +60,10 @@ Start the server
 
 👤 **na0495**
 
-- Website: https://saad-mrabet.me/
+- Website: https://Zanan-Virani.me/
 - Twitter: [@na0495](https://twitter.com/na0495)
 - Github: [@na0495](https://github.com/na0495)
-- LinkedIn: [@https:\/\/www.linkedin.com\/in\/saad-mrabet-978a01188\/](https://linkedin.com/in/https://www.linkedin.com/in/saad-mrabet-978a01188/)
+- LinkedIn: [@https:\/\/www.linkedin.com\/in\/Zanan-Virani-978a01188\/](https://linkedin.com/in/https://www.linkedin.com/in/Zanan-Virani-978a01188/)
 
 ## Show your support
 

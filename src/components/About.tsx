@@ -22,7 +22,7 @@ import { Code, CodeOff } from "tabler-icons-react";
 
 // ----------------------------------------------------------------------------
 
-const aboutMeCode = `import Saad from "@saad/core"
+const aboutMeCode = `import Zanan from "@Zanan/core"
 
 // -----------------------------------------------------------------------------
 
@@ -35,7 +35,7 @@ type Props = {
 
 export default function AboutMe(props: Props) {
   return (
-    <Saad ${aboutMe.details.map(
+    <Zanan ${aboutMe.details.map(
       (item: any) =>
         `
       ${item.icon} = {${item.text}}`

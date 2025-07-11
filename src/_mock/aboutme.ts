@@ -21,7 +21,7 @@ export const aboutMe = {
   details: [
     {
       id: 1,
-      text: ` I'm Mrabet saâd, a ${getAge()} years old programmer, from Tangier Morocco 🇲🇦. `,
+      text: ` I'm Virani Zanan, a ${getAge()} years old programmer, from Tangier Morocco 🇲🇦. `,
       icon: "🧔🏻",
     },
     {

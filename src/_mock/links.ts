@@ -17,7 +17,7 @@ export const socialLinks = [
   },
   {
     label: "Linkedin",
-    href: "https://www.linkedin.com/in/saad-mrabet-978a01188/",
+    href: "https://www.linkedin.com/in/Zanan-Virani-978a01188/",
     icon: BrandLinkedin,
     color: "#0077B5",
   },
