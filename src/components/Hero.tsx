@@ -202,7 +202,7 @@ export default function Hero() {
                   <Type />
                 </Title>
               </m.div>
-              <Group mt={30}>
+              {/* <Group mt={30}>
                 <Button
                   variant="default"
                   radius="lg"
@@ -222,7 +222,7 @@ export default function Hero() {
                     <Star />
                   </ThemeIcon>
                 </Button>
-              </Group>
+              </Group> */}
             </Box>
           </Center>
         </Grid.Col>
