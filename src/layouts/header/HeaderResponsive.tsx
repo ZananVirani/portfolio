@@ -170,15 +170,23 @@ export default function HeaderResponsive({ links }: HeaderResponsiveProps) {
       )}
       onClick={(event) => {
         event.preventDefault();
-        setActiveSection(link.link);
+
+        // Don't immediately set active section - let scroll spy handle it
+        // setActiveSection(link.link); // Removed this line
 
         // Scroll to section for anchor links
         if (link.link.startsWith("#")) {
           const element = document.querySelector(link.link);
           if (element) {
-            element.scrollIntoView({
+            // Calculate offset to account for header height
+            const headerHeight = 70; // HEADER_HEIGHT constant
+            const elementTop = element.getBoundingClientRect().top;
+            const offsetPosition =
+              elementTop + window.pageYOffset - headerHeight;
+
+            window.scrollTo({
+              top: offsetPosition,
               behavior: "smooth",
-              block: "start",
             });
           }
         } else {
