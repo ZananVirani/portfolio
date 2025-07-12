@@ -48,27 +48,27 @@ export default function LandingPage() {
   return (
     <>
       <div ref={targetRef} />
-      <Section withBackground={false} isFirst={true}>
+      <Section withBackground={false} isFirst={true} sectionId="home">
         <div id="home">
           <Hero />
         </div>
       </Section>
-      <Section withBackground={true}>
+      <Section withBackground={true} sectionId="about">
         <div id="about">
           <About />
         </div>
       </Section>
-      <Section withBackground={false}>
+      <Section withBackground={false} sectionId="skills">
         <div id="skills">
           <Skills />
         </div>
       </Section>
-      <Section withBackground={true} height={"200hv"}>
+      <Section withBackground={true} height={"200hv"} sectionId="projects">
         <div id="projects">
           <Project />
         </div>
       </Section>
-      <Section withBackground={false}>
+      <Section withBackground={false} sectionId="contact">
         <div id="contact">
           <Contact />
         </div>

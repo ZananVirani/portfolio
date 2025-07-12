@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 // motion
 import { motion } from "framer-motion";
@@ -17,6 +17,7 @@ import { useDisclosure } from "@mantine/hooks";
 // icons
 // hooks
 import useAnalyticsEventTracker from "src/hooks/useAnalyticsEventTracker";
+import { useScrollContext } from "src/contexts/ScrollContext";
 // buttons
 import MusicMode from "./MusicMode";
 import SwitchMode from "./SwitchMode";
@@ -148,9 +149,11 @@ export default function HeaderResponsive({ links }: HeaderResponsiveProps) {
     action: "Click",
   });
   const [opened, { toggle, close }] = useDisclosure(false);
-  const [active, setActive] = useState(links[0].link);
   const { classes, cx } = useStyles();
   const [play] = useSound(soundUrl, { volume: 0.2 });
+
+  // Use context to get the active section
+  const { activeSection, setActiveSection } = useScrollContext();
 
   const items = links.map((link) => (
     <motion.a
@@ -161,13 +164,13 @@ export default function HeaderResponsive({ links }: HeaderResponsiveProps) {
       className={cx(
         classes.link,
         {
-          [classes.linkActive]: active === link.link,
+          [classes.linkActive]: activeSection === link.link,
         },
         { [classes.additonalLinks]: opened === false }
       )}
       onClick={(event) => {
         event.preventDefault();
-        setActive(link.link);
+        setActiveSection(link.link);
 
         // Scroll to section for anchor links
         if (link.link.startsWith("#")) {
