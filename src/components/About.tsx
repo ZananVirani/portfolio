@@ -62,7 +62,7 @@ export default function About() {
   );
 
   return (
-    <Container px="xl" size="xl">
+    <Container mt={50} mb={50} px="xl" size="xl">
       <BoxWrapper withBackground={false}>
         <Group position="apart" mb={25}>
           <Title

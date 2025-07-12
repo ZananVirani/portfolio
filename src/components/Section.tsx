@@ -42,8 +42,8 @@ const Section = forwardRef<HTMLDivElement, SectionProps>(
             minHeight: "60vh",
           },
           [theme.fn.smallerThan("md")]: {
-            marginTop: isFirst ? -150 : 0,
-            marginBottom: isFirst ? 150 : 0,
+            marginTop: isFirst ? -150 : 20,
+            marginBottom: isFirst ? 150 : 20,
           },
           [theme.fn.largerThan("md")]: {
             marginTop: isFirst ? -125 : 0,

@@ -27,7 +27,7 @@ export default function Github() {
   }, []);
 
   return (
-    <Container px="xl" size="lg">
+    <Container mt={50} mb={50} px="xl" size="lg">
       <BoxWrapper withBackground={false}>
         <Title
           order={1}
