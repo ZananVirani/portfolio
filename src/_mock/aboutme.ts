@@ -17,17 +17,17 @@ function getAge() {
 }
 
 export const aboutMe = {
-  title: "Let me introduce myself",
+  title: "Let me introduce myself...",
   details: [
     {
       id: 1,
-      text: ` I'm Virani Zanan, a ${getAge()} years old programmer, from Tangier Morocco 🇲🇦. `,
-      icon: "🧔🏻",
+      text: ` I'm Zanan Virani, a ${getAge()}-year old programmer from Markham, Canada.`,
+      icon: "👋",
     },
     {
       id: 2,
       text: " I got my bachelor's degree in Computer Engineering at 2021. ",
-      icon: "🧑🏼‍🎓",
+      icon: "🎓",
     },
     {
       id: 3,

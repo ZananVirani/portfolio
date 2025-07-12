@@ -47,7 +47,7 @@ export default function AboutMe(props: Props) {
 export default function About() {
   const theme = useMantineTheme();
   const match = useMediaQuery("(max-width: 1000px)");
-  const [isTechPersonal, setIsTechPersonal] = useState(true);
+  const [isTechPersonal, setIsTechPersonal] = useState(false);
   const NonTechContent = () => (
     <>
       {aboutMe.details.map((item: any, index: number) => (
@@ -62,7 +62,7 @@ export default function About() {
   );
 
   return (
-    <Container px="xl" size="lg">
+    <Container px="xl" size="xl">
       <BoxWrapper withBackground={false}>
         <Group position="apart" mb={25}>
           <Title
@@ -76,7 +76,7 @@ export default function About() {
           >
             {aboutMe.title}
           </Title>
-          {!match && (
+          {/* {!match && (
             <Switch
               label={isTechPersonal ? "Dev view" : "Non tech view"}
               checked={isTechPersonal}
@@ -98,7 +98,7 @@ export default function About() {
               color="orange"
               size="lg"
             />
-          )}
+          )} */}
         </Group>
         {!match ? (
           isTechPersonal ? (

@@ -42,7 +42,6 @@ const useStyles: any = createStyles((theme) => ({
         ? theme.colors.yellow[5]
         : theme.colors.orange[6],
     transform: "rotate(-10deg) !important",
-    zIndex: 2,
     opacity: 0.8,
     textShadow: "1px 1px 2px rgba(0,0,0,0.1)",
     [theme.fn.smallerThan("sm")]: {
