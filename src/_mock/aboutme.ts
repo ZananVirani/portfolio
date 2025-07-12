@@ -26,38 +26,45 @@ export const aboutMe = {
     },
     {
       id: 2,
-      text: " I got my bachelor's degree in Computer Engineering at 2021. ",
+      text: "Currently in my 3rd year of the Computer Science + Ivey HBA dual degree program at Western University. Go Mustangs! 🐎",
       icon: "🎓",
     },
     {
       id: 3,
-      text: `
-              I enjoy being challenged and engaging with projects that require me to work outside
-              my comfort zone and knowledge set, as continuing to learn new languages and 
-              development techniques.
-           `,
+      text: "I love building things — whether it’s mobile apps, full-stack web apps, or just fun side projects that solve real problems.",
+      icon: "🛠️",
+    },
+    {
+      id: 3,
+      text: "I thrive on challenge and get excited by projects that push me to learn something new or think in a different way.",
       icon: "🎯",
     },
     {
       id: 4,
-      text: " I'm fluent in many programming languages, especially in Js/Ts & Python. ",
-      icon: "💻",
-    },
-    {
-      id: 5,
-      text: `
-              My field of Interest are building new  Web Technologies and Products and also in 
-              areas related Mobile application and Natural Language Processing.
-           `,
-      icon: "🔎",
+      text: "I'm a fast learner who thrives in new environments — no matter how tough the obstacle, I tackle it with curiosity, grit, and a positive attitude.",
+      icon: "💪",
     },
     {
       id: 6,
       text: `
-              whenever possible, i also apply my passion for developing products with multiple 
-              different frameworks and technologies, like Django, React, Angular, Vite, Redux, Node.js ...
+              My primary fields of interest are quantitative development, data science, machine learning, and software development.
            `,
-      icon: "💭",
+      icon: "🔎",
+    },
+    {
+      id: 7,
+      text: " I'm fluent in many programming languages, including C++, Python, Java, and JavaScript/TypeScript. ",
+      icon: "💻",
+    },
+    {
+      id: 8,
+      text: "In my free time, I enjoy hiking, doing Brazilian jiu-jitsu, playing sports, gaming, and watching movies or shows — I like to stay active and have fun!",
+      icon: "🌟",
+    },
+    {
+      id: 9,
+      text: "I love meeting new people and sharing ideas — whether you're into tech, sports, or just want to chat, feel free to reach out. I promise I don't bite 🐶",
+      icon: "🤝",
     },
   ],
 };

@@ -231,7 +231,7 @@ export default function Hero() {
                 transition={{ delay: 1.5, duration: 0.8 }}
                 className={classes.handwrittenText}
               >
-                PSSSTT...don't take me too seriously ;)
+                PSSSTT...thanks for stopping by ;)
               </m.div>
               {/* <Group mt={30}>
                 <Button
