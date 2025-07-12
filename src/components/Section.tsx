@@ -35,11 +35,15 @@ const Section = forwardRef<HTMLDivElement, SectionProps>(
     return (
       <Box
         sx={(theme: any) => ({
-          minHeight: "100vh",
-
+          [theme.fn.largerThan("sm")]: {
+            minHeight: "100vh",
+          },
+          [theme.fn.smallerThan("sm")]: {
+            minHeight: "60vh",
+          },
           [theme.fn.smallerThan("md")]: {
             marginTop: isFirst ? -150 : 0,
-            marginBottom: 150,
+            marginBottom: isFirst ? 150 : 0,
           },
           [theme.fn.largerThan("md")]: {
             marginTop: isFirst ? -125 : 0,
