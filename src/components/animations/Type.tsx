@@ -10,8 +10,8 @@ function Type() {
         strings: [
           "Software Engineer",
           "Explorer",
-          "Full-Stack Developer",
-          "Mobile Developer",
+          "Full-Stack Dev",
+          "Driven by Passion",
         ],
         autoStart: true,
         loop: true,

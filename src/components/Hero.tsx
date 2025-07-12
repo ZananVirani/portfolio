@@ -30,6 +30,28 @@ import { metaData } from "src/_mock/seo";
 const STRING: string[] = ["Hello,", "_", "I'm"];
 
 const useStyles: any = createStyles((theme) => ({
+  handwrittenText: {
+    position: "relative",
+    marginTop: "2rem",
+    left: "1rem",
+    fontFamily: "'Kalam', cursive",
+    fontSize: "1.2rem",
+    fontWeight: 400,
+    color:
+      theme.colorScheme === "dark"
+        ? theme.colors.yellow[5]
+        : theme.colors.orange[6],
+    transform: "rotate(-10deg) !important",
+    zIndex: 2,
+    opacity: 0.8,
+    textShadow: "1px 1px 2px rgba(0,0,0,0.1)",
+    [theme.fn.smallerThan("sm")]: {
+      fontSize: "1rem",
+      top: 10,
+      left: 10,
+    },
+  },
+
   title: {
     color: theme.colorScheme === "dark" ? theme.white : theme.black,
     fontFamily: `Greycliff CF, ${theme.fontFamily}`,
@@ -122,12 +144,13 @@ const useStyles: any = createStyles((theme) => ({
     ),
     backgroundSize: "400%",
     [theme.fn.smallerThan("sm")]: {
-      marginTop: 125,
+      marginTop: 80,
       width: 225,
       height: 225,
     },
     [theme.fn.largerThan("sm")]: {
       marginTop: 125,
+      marginLeft: 50,
       minWidth: 400,
       minHeight: 400,
     },
@@ -148,7 +171,7 @@ export default function Hero() {
   });
 
   return (
-    <Group pr={10}>
+    <Group pr={10} style={{ position: "relative" }}>
       <Grid justify="space-between" align="center">
         <Grid.Col lg={6} md={7} sm={12} mt={95}>
           <Center>
@@ -201,6 +224,15 @@ export default function Hero() {
                 >
                   <Type />
                 </Title>
+              </m.div>
+              {/* Handwritten tilted text at top left */}
+              <m.div
+                initial={{ opacity: 0, y: -20, rotate: 20 }}
+                animate={{ opacity: 0.8, y: 0, rotate: 20 }}
+                transition={{ delay: 1.5, duration: 0.8 }}
+                className={classes.handwrittenText}
+              >
+                PSSSTT...don't take me too seriously ;)
               </m.div>
               {/* <Group mt={30}>
                 <Button
