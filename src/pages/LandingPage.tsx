@@ -4,6 +4,7 @@ import { ActionIcon, createStyles } from "@mantine/core";
 import { useScrollIntoView } from "@mantine/hooks";
 // components
 import About from "src/components/About";
+import { Contact } from "src/components/Contact";
 import Github from "src/components/Github";
 import Hero from "src/components/Hero";
 import Section from "src/components/Section";
@@ -48,19 +49,29 @@ export default function LandingPage() {
     <>
       <div ref={targetRef} />
       <Section withBackground={false} isFirst={true}>
-        <Hero />
+        <div id="home">
+          <Hero />
+        </div>
       </Section>
       <Section withBackground={true}>
-        <About />
+        <div id="about">
+          <About />
+        </div>
       </Section>
       <Section withBackground={false}>
-        <Skills />
+        <div id="skills">
+          <Skills />
+        </div>
       </Section>
       <Section withBackground={true} height={"200hv"}>
-        <Github />
+        <div id="projects">
+          <Project />
+        </div>
       </Section>
-      <Section withBackground={false} height={"200hv"}>
-        <Project />
+      <Section withBackground={false}>
+        <div id="contact">
+          <Contact />
+        </div>
       </Section>
       <div className={classes.sticky}>
         <ActionIcon

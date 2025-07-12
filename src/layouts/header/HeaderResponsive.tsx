@@ -168,7 +168,20 @@ export default function HeaderResponsive({ links }: HeaderResponsiveProps) {
       onClick={(event) => {
         event.preventDefault();
         setActive(link.link);
-        navigate(link.link);
+
+        // Scroll to section for anchor links
+        if (link.link.startsWith("#")) {
+          const element = document.querySelector(link.link);
+          if (element) {
+            element.scrollIntoView({
+              behavior: "smooth",
+              block: "start",
+            });
+          }
+        } else {
+          navigate(link.link);
+        }
+
         gaEventTracker({ label: link.label });
         play();
         close();

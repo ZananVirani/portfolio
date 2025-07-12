@@ -10,28 +10,24 @@ import HeaderResponsive from "./header/HeaderResponsive";
 
 const links = [
   {
-    label: "Landing",
-    link: "/",
+    label: "Home",
+    link: "#home",
   },
   {
     label: "About",
-    link: "/about",
+    link: "#about",
   },
-  // {
-  //   label: "Path",
-  //   link: "/path",
-  // },
   {
     label: "Skills",
-    link: "/skills",
+    link: "#skills",
   },
   {
     label: "Projects",
-    link: "/projects",
+    link: "#projects",
   },
   {
     label: "Contact",
-    link: "/contact",
+    link: "#contact",
   },
 ];
 
