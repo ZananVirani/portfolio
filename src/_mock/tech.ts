@@ -30,20 +30,19 @@ import flutterWebp from "../assets/languages/flutter.webp";
 export const tech = [
   {
     title: "Technologies & Tools",
-    description:
-      "For me, those are some of the tech & tools that i like to use on my daily work, and which I really enjoy using them on the different projects either personal or professional.",
+    description: undefined,
+    // "For me, those are some of the tech & tools that i like to use on my daily work, and which I really enjoy using them on the different projects either personal or professional.",
     data: [
       {
         type: "Programming languages",
         webp: [
-          pythonWebp,
-          jsWebp,
-          typescriptWebp,
-          htmlWebp,
-          cssWebp,
-          golangWebp,
+          [pythonWebp, "Python"],
+          [jsWebp, "JavaScript"],
+          [typescriptWebp, "TypeScript"],
+          [htmlWebp, "HTML"],
+          [cssWebp, "CSS"],
           bashWebp,
-          dartWebp,
+          [dartWebp, "Dart"],
         ],
       },
       {

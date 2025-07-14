@@ -32,6 +32,21 @@ const useStyles = createStyles((theme) => ({
       fontSize: 28,
     },
   },
+  subtitle: {
+    color:
+      theme.colorScheme === "dark"
+        ? theme.colors.yellow[4]
+        : theme.colors.orange[4],
+    fontFamily: `Greycliff CF, ${theme.fontFamily}`,
+    fontSize: theme.fontSizes.sm,
+    marginTop: theme.spacing.xs,
+    lineHeight: 1,
+    fontWeight: 800,
+
+    [theme.fn.smallerThan("xs")]: {
+      fontSize: 28,
+    },
+  },
   img: {
     width: 70,
     height: 70,
@@ -81,16 +96,27 @@ export default function Skills() {
                     { maxWidth: 450, cols: 3, spacing: "sm" },
                   ]}
                 >
-                  {dataItem.webp.map((subDataitem: any) => (
-                    <motion.img
-                      key={subDataitem}
-                      alt={subDataitem}
-                      className={classes.img}
-                      whileHover={{ scale: 1.3 }}
-                      whileTap={{ scale: 0.8 }}
-                      src={subDataitem}
-                      // alt={subDataitem}
-                    />
+                  {dataItem.webp.map((subDataitem: any, index: number) => (
+                    <div
+                      style={{
+                        display: "flex",
+                        justifyContent: "center",
+                        flexDirection: "column",
+                        alignItems: "center",
+                      }}
+                      key={index}
+                    >
+                      <motion.img
+                        // key={subDataitem[0]}
+                        alt={subDataitem[0]}
+                        className={classes.img}
+                        // whileHover={{ scale: 1.3 }}
+                        // whileTap={{ scale: 0.8 }}
+                        src={subDataitem[0]}
+                        // alt={subDataitem[0]}
+                      />
+                      <Text className={classes.subtitle}>{subDataitem[1]}</Text>
+                    </div>
                   ))}
                 </SimpleGrid>
               </div>
