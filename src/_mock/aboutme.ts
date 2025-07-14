@@ -47,13 +47,13 @@ export const aboutMe = {
     {
       id: 6,
       text: `
-              My primary fields of interest are quantitative development, data science, machine learning, and software development.
+              My primary fields of interest are software engineering, quantitative development, machine learning, and data science.
            `,
       icon: "🔎",
     },
     {
       id: 7,
-      text: " I'm fluent in many programming languages, including C++, Python, Java, and JavaScript/TypeScript. ",
+      text: " I'm fluent in many programming languages, including C++, Python, Java, and more!",
       icon: "💻",
     },
     {
@@ -63,7 +63,7 @@ export const aboutMe = {
     },
     {
       id: 9,
-      text: "I love meeting new people and sharing ideas — whether you're into tech, sports, or just want to chat, feel free to reach out. I promise I don't bite 🐶",
+      text: "I love meeting new people and sharing ideas — whether you're into tech or just want to chat, feel free to reach out. I promise I don't bite 🐶",
       icon: "🤝",
     },
   ],
