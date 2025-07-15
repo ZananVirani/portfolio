@@ -13,7 +13,7 @@ export default function Github() {
   const [repos, setRepos] = useState<any>([]);
 
   const fetchData = async () => {
-    const res = await fetch("https://api.github.com/users/na0495/repos");
+    const res = await fetch("https://api.github.com/users/ZananVirani/repos");
     const data = await res.json();
     setRepos(
       data

@@ -7,7 +7,7 @@ const BoxWrapper = forwardRef<HTMLDivElement, any>(
   ({ children, align, withBackground, ...props }, ref) => {
     return (
       <Box
-        sx={(theme) => ({
+        sx={(theme: any) => ({
           textAlign: align,
           [theme.fn.largerThan("xs")]: {
             padding: theme.spacing.xl,

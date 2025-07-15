@@ -49,7 +49,7 @@ export default function MainLayout(): JSX.Element {
       >
         <Outlet />
       </AppShell>
-      <Footer />
+      {/* <Footer /> */}
     </ScrollProvider>
   );
 }

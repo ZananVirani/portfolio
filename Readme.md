@@ -4,8 +4,8 @@
   <a href="#" target="_blank">
     <img alt="License: MIT" src="https://img.shields.io/badge/License-MIT-yellow.svg" />
   </a>
-  <a href="https://twitter.com/na0495" target="_blank">
-    <img alt="Twitter: na0495" src="https://img.shields.io/twitter/follow/na0495.svg?style=social" />
+  <a href="https://twitter.com/ZananVirani" target="_blank">
+    <img alt="Twitter: ZananVirani" src="https://img.shields.io/twitter/follow/ZananVirani.svg?style=social" />
   </a>
 </p>
 
@@ -53,16 +53,16 @@ Start the server
 ## Author
 
 <a href = "https://github.com/Tanu-N-Prabhu/Python/graphs/contributors">
-  <img src = "https://contrib.rocks/image?repo=na0495/mario-with-js"/>
+  <img src = "https://contrib.rocks/image?repo=ZananVirani/mario-with-js"/>
 </a>
 
 <br>
 
-👤 **na0495**
+👤 **ZananVirani**
 
 - Website: https://Zanan-Virani.me/
-- Twitter: [@na0495](https://twitter.com/na0495)
-- Github: [@na0495](https://github.com/na0495)
+- Twitter: [@ZananVirani](https://twitter.com/ZananVirani)
+- Github: [@ZananVirani](https://github.com/ZananVirani)
 - LinkedIn: [@https:\/\/www.linkedin.com\/in\/Zanan-Virani-978a01188\/](https://linkedin.com/in/https://www.linkedin.com/in/Zanan-Virani-978a01188/)
 
 ## Show your support

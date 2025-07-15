@@ -5,13 +5,13 @@ import { BrandGithub, BrandLinkedin, BrandTwitter } from "tabler-icons-react";
 export const socialLinks = [
   {
     label: "Twitter",
-    href: "https://twitter.com/na0495",
+    href: "https://twitter.com/ZananVirani",
     icon: BrandTwitter,
     color: "#1DA1F2",
   },
   {
     label: "Github",
-    href: "https://github.com/na0495",
+    href: "https://github.com/ZananVirani",
     icon: BrandGithub,
     color: "#24292e",
   },

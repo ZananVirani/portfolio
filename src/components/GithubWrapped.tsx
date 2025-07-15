@@ -1,5 +1,5 @@
 import { createStyles } from "@mantine/core";
-import na0495Video from "../assets/na0495.mp4";
+import ZananViraniVideo from "../assets/ZananVirani.mp4";
 import BoxWrapper from "./BoxWrapper";
 
 // ----------------------------------------------------
@@ -22,7 +22,7 @@ export default function GithubWrapped() {
   return (
     <BoxWrapper>
       <video controls className={classes.video}>
-        <source src={na0495Video} type="video/mp4" />
+        <source src={ZananViraniVideo} type="video/mp4" />
         Sorry, your browser doesn't support videos.
       </video>
     </BoxWrapper>

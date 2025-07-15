@@ -68,9 +68,10 @@ export default function Footer() {
     <footer className={classes.footer}>
       <Container className={classes.afterFooter}>
         <Text color="dimmed" size="sm">
-          Copyright © 2022 na0495 All rights reserved, view the source code on{" "}
+          Copyright © 2022 ZananVirani All rights reserved, view the source code
+          on{" "}
           <a
-            href="https://github.com/na0495/Personal-Portfolio-template"
+            href="https://github.com/ZananVirani/Personal-Portfolio-template"
             target="_blank"
             rel="noreferrer"
           >

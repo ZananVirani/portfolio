@@ -240,7 +240,7 @@ export default function Hero() {
                   size="md"
                   className={classes.control}
                   component={"a"}
-                  href="https://github.com/na0495/Personal-Portfolio-template"
+                  href="https://github.com/ZananVirani/Personal-Portfolio-template"
                   target={"_blank"}
                   onClick={() =>
                     gaEventTracker({
