@@ -17,20 +17,16 @@ import { ArrowUp } from "tabler-icons-react";
 
 const useStyles = createStyles((theme) => ({
   sticky: {
-    position: "sticky",
+    position: "fixed", // Change from sticky to fixed
     zIndex: 9999,
-    bottom: "0",
-    right: "0",
+    bottom: 25, // Fixed distance from bottom
+    right: 25, // Fixed distance from right
     display: "flex",
     alignItems: "center",
     justifyContent: "flex-end",
     [theme.fn.largerThan("md")]: {
-      paddingBottom: 75,
-      marginRight: 75,
-    },
-    [theme.fn.smallerThan("md")]: {
-      paddingBottom: 25,
-      marginRight: 25,
+      bottom: 75,
+      right: 75,
     },
   },
 }));

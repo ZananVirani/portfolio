@@ -43,11 +43,11 @@ const Section = forwardRef<HTMLDivElement, SectionProps>(
           },
           [theme.fn.smallerThan("md")]: {
             marginTop: isFirst ? -150 : 20,
-            marginBottom: isFirst ? 150 : 20,
+            marginBottom: isFirst ? 150 : -17,
           },
           [theme.fn.largerThan("md")]: {
             marginTop: isFirst ? -125 : 0,
-            marginBottom: 10,
+            marginBottom: isFirst ? 10 : -17,
           },
           marginRight: -16,
           marginLeft: -16,

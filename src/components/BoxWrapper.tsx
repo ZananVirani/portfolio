@@ -12,7 +12,6 @@ const BoxWrapper = forwardRef<HTMLDivElement, any>(
           [theme.fn.largerThan("xs")]: {
             padding: theme.spacing.xl,
           },
-
           borderRadius: theme.radius.md,
           marginTop: theme.spacing.xl,
           marginBottom: theme.spacing.xl,

@@ -27,10 +27,10 @@ const links = [
     label: "Projects",
     link: "#projects",
   },
-  {
-    label: "Contact",
-    link: "#contact",
-  },
+  // {
+  //   label: "Contact",
+  //   link: "#contact",
+  // },
 ];
 
 export default function MainLayout(): JSX.Element {
@@ -48,6 +48,17 @@ export default function MainLayout(): JSX.Element {
         header={<HeaderResponsive links={links} />}
       >
         <Outlet />
+        {/* <p style={{ justifyContent: "center", display: "flex" }}>
+          Copyright © 2025 Zanan Virani, view the source code on{" "}
+          <a
+            href="https://github.com/ZananVirani/portfolio"
+            target="_blank"
+            rel="noreferrer"
+          >
+            GitHub
+          </a>
+          .
+        </p> */}
       </AppShell>
       <Footer />
     </ScrollProvider>

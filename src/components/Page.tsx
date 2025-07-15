@@ -22,7 +22,7 @@ const Page = forwardRef<HTMLDivElement, PageProps>(
     <Center ref={ref} mt={100}>
       <CustomHelmet title={title} />
       <Box
-        sx={(theme) => ({
+        sx={(theme: any) => ({
           marginRight: -16,
           marginLeft: -16,
           backgroundColor: withBackground
