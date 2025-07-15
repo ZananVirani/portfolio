@@ -228,7 +228,7 @@ export default function Hero() {
               <m.div
                 initial={{ opacity: 0, y: -20, rotate: 20 }}
                 animate={{ opacity: 0.8, y: 0, rotate: 20 }}
-                transition={{ delay: 1.5, duration: 0.8 }}
+                transition={{ delay: 2.5, duration: 0.5 }}
                 className={classes.handwrittenText}
               >
                 PSSSTT...thanks for stopping by ;)

@@ -68,11 +68,11 @@ export default function LandingPage() {
           <Project />
         </div>
       </Section>
-      <Section withBackground={false} sectionId="contact">
+      {/* <Section withBackground={false} sectionId="contact">
         <div id="contact">
           <Contact />
         </div>
-      </Section>
+      </Section> */}
       <div className={classes.sticky}>
         <ActionIcon
           variant="filled"
