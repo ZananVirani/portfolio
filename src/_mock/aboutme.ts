@@ -63,7 +63,7 @@ export const aboutMe = {
     },
     {
       id: 9,
-      text: "I love meeting new people and sharing ideas — whether you're into tech or just want to chat, feel free to reach out. I promise I don't bite 🐶",
+      text: "I love meeting new people and sharing ideas — whether you're into tech or just want to chat, feel free to reach out! I promise I don't bite 🐶",
       icon: "🤝",
     },
   ],

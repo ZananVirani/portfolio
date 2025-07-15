@@ -115,7 +115,14 @@ export default function Skills() {
                         src={subDataitem[0]}
                         // alt={subDataitem[0]}
                       />
-                      <Text className={classes.subtitle}>{subDataitem[1]}</Text>
+                      <Text
+                        className={classes.subtitle}
+                        style={
+                          subDataitem[1].length > 11 ? { fontSize: 10 } : {}
+                        }
+                      >
+                        {subDataitem[1]}
+                      </Text>
                     </div>
                   ))}
                 </SimpleGrid>
