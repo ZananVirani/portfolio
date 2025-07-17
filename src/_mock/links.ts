@@ -1,13 +1,18 @@
-import { BrandGithub, BrandLinkedin, BrandTwitter } from "tabler-icons-react";
+import {
+  BrandGithub,
+  BrandLinkedin,
+  BrandTwitter,
+  BrandGmail,
+} from "tabler-icons-react";
 
 // ----------------------------------------------------------------------
 
 export const socialLinks = [
   {
-    label: "Twitter",
-    href: "https://twitter.com/ZananVirani",
-    icon: BrandTwitter,
-    color: "#1DA1F2",
+    label: "Email",
+    href: "mailto:zananvirani@gmail.com",
+    icon: BrandGmail,
+    color: "#EA4335",
   },
   {
     label: "Github",
@@ -17,7 +22,7 @@ export const socialLinks = [
   },
   {
     label: "Linkedin",
-    href: "https://www.linkedin.com/in/Zanan-Virani-978a01188/",
+    href: "https://www.linkedin.com/in/zanan/",
     icon: BrandLinkedin,
     color: "#0077B5",
   },

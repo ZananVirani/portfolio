@@ -21,7 +21,7 @@ import HeroCanvas from "./HeroCanvas";
 // utils
 import { backgroundGradient, textGradient } from "src/utils/cssStyles";
 // icons
-import { Star } from "tabler-icons-react";
+import { FileText, Star } from "tabler-icons-react";
 // data
 import { metaData } from "src/_mock/seo";
 
@@ -225,15 +225,7 @@ export default function Hero() {
                 </Title>
               </m.div>
               {/* Handwritten tilted text at top left */}
-              <m.div
-                initial={{ opacity: 0, y: -20, rotate: 20 }}
-                animate={{ opacity: 0.8, y: 0, rotate: 20 }}
-                transition={{ delay: 2.5, duration: 0.5 }}
-                className={classes.handwrittenText}
-              >
-                PSSSTT...thanks for stopping by ;)
-              </m.div>
-              {/* <Group mt={30}>
+              <Group mt={30}>
                 <Button
                   variant="default"
                   radius="lg"
@@ -248,12 +240,20 @@ export default function Hero() {
                     })
                   }
                 >
-                  Preview on Github &nbsp;
+                  Check Out My Resume &nbsp;
                   <ThemeIcon color="yellow" radius="xl" size="lg">
-                    <Star />
+                    <FileText />
                   </ThemeIcon>
                 </Button>
-              </Group> */}
+              </Group>
+              <m.div
+                initial={{ opacity: 0, y: -20, rotate: 20 }}
+                animate={{ opacity: 0.8, y: 0, rotate: 20 }}
+                transition={{ delay: 2.5, duration: 0.5 }}
+                className={classes.handwrittenText}
+              >
+                PSSSTT...thanks for stopping by ;)
+              </m.div>
             </Box>
           </Center>
         </Grid.Col>
