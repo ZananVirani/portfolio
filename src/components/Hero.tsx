@@ -232,11 +232,11 @@ export default function Hero() {
                   size="md"
                   className={classes.control}
                   component={"a"}
-                  href="https://github.com/ZananVirani/Personal-Portfolio-template"
+                  href="https://drive.google.com/file/d/1SBcVmwU7v8eO7geWRBZVydg86Q9FN_FH/view?usp=sharing"
                   target={"_blank"}
                   onClick={() =>
                     gaEventTracker({
-                      label: "Preview on Github",
+                      label: "Preview on Google Drive",
                     })
                   }
                 >
