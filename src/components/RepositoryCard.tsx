@@ -38,7 +38,7 @@ export default function RepositoryCard({
   return (
     <motion.div whileHover={{ y: -5 }}>
       <Box
-        sx={(theme) => ({
+        sx={(theme: any) => ({
           padding: theme.spacing.md,
           maxHeight: 175,
           minHeight: 150,
@@ -61,7 +61,9 @@ export default function RepositoryCard({
           <Group>
             <Group>
               <BrandGithub />
-              <Text size="md">{title}</Text>
+              <Text size="md" weight={500} lineClamp={1}>
+                {title}
+              </Text>
             </Group>
             <Group position="apart">
               <Group>
@@ -76,14 +78,14 @@ export default function RepositoryCard({
                   {stargazers_count}
                 </Group>
               </Group>
-              {language && (
-                <Badge color={getTagColor(language)} size="md">
-                  <Text size="xs">{language}</Text>
+              {
+                <Badge color={getTagColor(language ?? "typescript")} size="md">
+                  <Text size="xs">{language ?? "typescript"}</Text>
                 </Badge>
-              )}
+              }
             </Group>
           </Group>
-          <Text lineClamp={2}>
+          <Text lineClamp={4}>
             <TypographyStylesProvider>
               <Text size="xs">{description}</Text>
             </TypographyStylesProvider>
