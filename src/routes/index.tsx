@@ -27,16 +27,6 @@ export default function Routes() {
       element: <MainLayout />,
       children: [{ path: "", element: <LandingPage /> }],
     },
-    {
-      path: "/path",
-      element: <MainLayout />,
-      children: [{ path: "", element: <PathPage /> }],
-    },
-    {
-      path: "/game",
-      element: <MainLayout />,
-      children: [{ path: "", element: <Game /> }],
-    },
     // Main Routes
     {
       path: "*",
@@ -59,5 +49,3 @@ const Maintenance = Loadable(lazy(() => import("src/pages/Maintenance")));
 const Page500 = Loadable(lazy(() => import("src/pages/Page500")));
 const NotFound = Loadable(lazy(() => import("src/pages/Page404")));
 const LandingPage = Loadable(lazy(() => import("src/pages/LandingPage")));
-const PathPage = Loadable(lazy(() => import("src/pages/PathPage")));
-const Game = Loadable(lazy(() => import("src/components/Game")));
