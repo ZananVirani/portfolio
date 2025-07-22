@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 // Mantine
 import { ActionIcon } from "@mantine/core";
 // Motion
@@ -22,15 +22,61 @@ export default function MusicMode() {
   });
 
   const [playMode, setPlayMode] = useState(true);
+  const [isAudioReady, setIsAudioReady] = useState(false);
 
-  // sound effects on click
-  const [play, { stop }] = useSound(Chill);
+  // sound effects on click with mobile-friendly options
+  const [play, { stop }] = useSound(Chill, {
+    volume: 0.5,
+    html5: true, // Use HTML5 audio for better mobile support
+    preload: true, // Preload the audio
+    onload: () => setIsAudioReady(true), // Track when audio is ready
+  });
 
-  const handleClick = () => {
-    // check the playMode value to play to stop the music
-    playMode ? play() : stop();
-    setPlayMode(!playMode);
-    gaEventTracker(playMode ? { label: "Music Off" } : { label: "Music On" });
+  // Enable audio context on first user interaction
+  useEffect(() => {
+    const enableAudio = () => {
+      // Resume audio context if it's suspended (common on mobile)
+      if (typeof window !== "undefined" && window.AudioContext) {
+        const audioContext = new (window.AudioContext ||
+          (window as any).webkitAudioContext)();
+        if (audioContext.state === "suspended") {
+          audioContext.resume();
+        }
+      }
+      document.removeEventListener("touchstart", enableAudio);
+      document.removeEventListener("click", enableAudio);
+    };
+
+    document.addEventListener("touchstart", enableAudio);
+    document.addEventListener("click", enableAudio);
+
+    return () => {
+      document.removeEventListener("touchstart", enableAudio);
+      document.removeEventListener("click", enableAudio);
+    };
+  }, []);
+
+  const handleClick = async () => {
+    try {
+      if (playMode) {
+        // For mobile devices, we need to ensure the audio context is resumed
+        const audioElement = document.querySelector("audio");
+        if (audioElement && audioElement.paused) {
+          await play();
+        } else {
+          play();
+        }
+      } else {
+        stop();
+      }
+      setPlayMode(!playMode);
+      gaEventTracker(playMode ? { label: "Music Off" } : { label: "Music On" });
+    } catch (error) {
+      console.warn("Audio playback failed:", error);
+      // Still update the UI even if audio fails
+      setPlayMode(!playMode);
+      gaEventTracker(playMode ? { label: "Music Off" } : { label: "Music On" });
+    }
   };
 
   return (
@@ -49,7 +95,7 @@ export default function MusicMode() {
           variant="filled"
           radius="lg"
           aria-label={playMode ? "Music Off" : "Music On"}
-          sx={(theme) => ({
+          sx={(theme: any) => ({
             backgroundColor:
               theme.colorScheme === "dark"
                 ? theme.colors.gray[8]
