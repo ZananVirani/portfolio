@@ -43,7 +43,7 @@ export default function Github() {
         </Title>
         <Grid>
           {repos.length > 0
-            ? repos.slice(0, 6).map((repo: any, index: number) => (
+            ? repos.map((repo: any, index: number) => (
                 <Grid.Col sm={12} md={6} lg={4} key={index}>
                   <RepositoryCard
                     title={repo.name}
