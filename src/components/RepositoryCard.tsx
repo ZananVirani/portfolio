@@ -11,6 +11,17 @@ import { getTagColor } from "../utils/getTagColor";
 
 // ------------------------------------------------------
 
+const mappings: Record<string, string[]> = {
+  IPSFellowshipPRD: [],
+  "ai-contribution-tracker": ["next", "fastapi"],
+  "Black-Scholes-Options-Pricer": ["c++"],
+  CafProject: ["react-native", "express"],
+  Melofy: ["flutter"],
+  PetGame: ["java"],
+  portfolio: ["react"],
+  "recipe.it": ["next", "fastapi"],
+};
+
 type RepositoryCardProps = {
   title: string;
   description: string;
@@ -66,7 +77,7 @@ export default function RepositoryCard({
               </Text>
             </Group>
             <Group position="apart">
-              <Group>
+              {/* <Group>
                 {forks_count && (
                   <Group>
                     <GitFork size={18} color={"red"} />
@@ -77,12 +88,8 @@ export default function RepositoryCard({
                   <Star size={18} color={"orange"} />
                   {stargazers_count}
                 </Group>
-              </Group>
-              {
-                <Badge color={getTagColor(language ?? "typescript")} size="md">
-                  <Text size="xs">{language ?? "typescript"}</Text>
-                </Badge>
-              }
+              </Group> */}
+              {renderLanguage()}
             </Group>
           </Group>
           <Text lineClamp={4}>
@@ -94,4 +101,16 @@ export default function RepositoryCard({
       </Box>
     </motion.div>
   );
+
+  function renderLanguage() {
+    return mappings[title].map((elem: string, index) => (
+      <Badge
+        key={index}
+        sx={{ backgroundColor: getTagColor(elem), color: "#fff" }}
+        size="md"
+      >
+        <Text size="xs">{elem}</Text>
+      </Badge>
+    ));
+  }
 }

@@ -1,18 +1,22 @@
 export const getTagColor = (type: string) => {
   type = type.toLowerCase();
-  if (type === "rails" || type === "ruby") {
-    return "red";
+  if (type === "next") {
+    return "#474747";
   } else if (type === "react") {
-    return "cyan";
-  } else if (type === "javascript") {
-    return "yellow";
-  } else if (type === "typescript") {
-    return "blue";
-  } else if (type === "css") {
-    return "grape";
-  } else if (type === "python") {
-    return "#4584b6";
-  } else if (type === "php") {
-    return "grape";
+    return "#00d8ff";
+  } else if (type === "fastapi") {
+    return "#dda9a9";
+  } else if (type === "flutter") {
+    return "orange";
+  } else if (type === "express") {
+    return "#9a81b0";
+  } else if (type === "c++") {
+    return "#5599ff";
+  } else if (type === "react-native") {
+    return "#8e7158";
+  } else if (type === "java") {
+    return "#b07219";
+  } else {
+    console.log(type);
   }
 };
