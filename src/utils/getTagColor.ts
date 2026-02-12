@@ -1,4 +1,5 @@
 export const getTagColor = (type: string) => {
+  console.log(type);
   type = type.toLowerCase();
   if (type === "next") {
     return "#474747";
@@ -16,6 +17,10 @@ export const getTagColor = (type: string) => {
     return "#8e7158";
   } else if (type === "java") {
     return "#b07219";
+  } else if (type === "python") {
+    return "#FFD43B";
+  } else if (type === "typescript") {
+    return "#3178c6";
   } else {
     console.log(type);
   }

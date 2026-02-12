@@ -20,6 +20,7 @@ const mappings: Record<string, string[]> = {
   PetGame: ["java"],
   portfolio: ["react"],
   "recipe.it": ["next", "fastapi"],
+  PrivInspect: ["typescript", "python"],
 };
 
 type RepositoryCardProps = {
@@ -103,7 +104,8 @@ export default function RepositoryCard({
   );
 
   function renderLanguage() {
-    return mappings[title].map((elem: string, index) => (
+    const languages = mappings[title] || [];
+    return languages.map((elem: string, index) => (
       <Badge
         key={index}
         sx={{ backgroundColor: getTagColor(elem), color: "#fff" }}

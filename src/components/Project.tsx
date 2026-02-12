@@ -13,13 +13,25 @@ export default function Github() {
   const [repos, setRepos] = useState<any>([]);
 
   const fetchData = async () => {
-    const res = await fetch("https://api.github.com/users/ZananVirani/repos");
-    const data = await res.json();
-    setRepos(
-      data
-        .sort((a: any, b: any) => b.stargazers_count - a.stargazers_count)
-        .slice(0, 9)
-    );
+    try {
+      const res = await fetch("https://api.github.com/users/ZananVirani/repos");
+      const data = await res.json();
+
+      // Check if data is an array before processing
+      if (Array.isArray(data)) {
+        setRepos(
+          data
+            .sort((a: any, b: any) => b.stargazers_count - a.stargazers_count)
+            .slice(0, 9),
+        );
+      } else {
+        console.error("GitHub API returned non-array data:", data);
+        setRepos([]);
+      }
+    } catch (error) {
+      console.error("Error fetching GitHub repos:", error);
+      setRepos([]);
+    }
   };
 
   useEffect(() => {
