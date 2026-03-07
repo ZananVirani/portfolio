@@ -2,11 +2,12 @@ import {
   Badge,
   Box,
   Group,
+  Progress,
   Text,
   TypographyStylesProvider,
 } from "@mantine/core";
 import { motion } from "framer-motion";
-import { BrandGithub, GitFork, Star } from "tabler-icons-react";
+import { BrandGithub, GitCommit, GitFork, Star } from "tabler-icons-react";
 import { getTagColor } from "../utils/getTagColor";
 
 // ------------------------------------------------------
@@ -31,6 +32,8 @@ type RepositoryCardProps = {
   forks_count: number;
   language: string;
   created_at: string;
+  commit_count?: number | null;
+  total_commit_count?: number | null;
 };
 
 export default function RepositoryCard({
@@ -41,19 +44,28 @@ export default function RepositoryCard({
   forks_count,
   language,
   created_at,
+  commit_count,
+  total_commit_count,
 }: RepositoryCardProps) {
   const handleLinkClick = (e: any, link: any) => {
     window.open(link);
     e.stopPropagation();
   };
 
+  const commitSharePercentage =
+    typeof commit_count === "number" &&
+    typeof total_commit_count === "number" &&
+    total_commit_count > 0
+      ? Math.min((commit_count / total_commit_count) * 100, 100)
+      : null;
+
   return (
     <motion.div whileHover={{ y: -5 }}>
       <Box
         sx={(theme: any) => ({
           padding: theme.spacing.md,
-          maxHeight: 175,
-          minHeight: 150,
+          maxHeight: 230,
+          minHeight: 195,
           borderRadius: 25,
           // marginTop: theme.spacing.sm,
           border: `1px solid ${
@@ -98,6 +110,30 @@ export default function RepositoryCard({
               <Text size="xs">{description}</Text>
             </TypographyStylesProvider>
           </Text>
+
+          {typeof commit_count === "number" && (
+            <Box mt={5}>
+              <Group spacing={6} mb={5}>
+                <GitCommit size={16} />
+                <Text size="xs" weight={600}>
+                  {commit_count.toLocaleString()} commits
+                  {typeof total_commit_count === "number"
+                    ? ` of ${total_commit_count.toLocaleString()}`
+                    : ""}
+                </Text>
+              </Group>
+              <Progress
+                value={commitSharePercentage ?? 0}
+                size="sm"
+                radius="xl"
+              />
+              <Text size="xs" mt={4} color="dimmed">
+                {typeof commitSharePercentage === "number"
+                  ? `Made ${commitSharePercentage.toFixed(0)}% of commits`
+                  : "Commit share unavailable"}
+              </Text>
+            </Box>
+          )}
         </Group>
       </Box>
     </motion.div>

@@ -4,6 +4,7 @@ import { Container, Grid, Skeleton, Title } from "@mantine/core";
 // Components
 import BoxWrapper from "./BoxWrapper";
 // d_mock
+import { GITHUB_USERNAME } from "../config";
 import github from "../_mock/github.json";
 import RepositoryCard from "./RepositoryCard";
 
@@ -43,12 +44,27 @@ export default function Github() {
 
   const fetchData = async () => {
     try {
-      const res = await fetch("https://api.github.com/users/ZananVirani/repos");
+      const res = await fetch(
+        `https://api.github.com/users/${GITHUB_USERNAME}/repos`,
+      );
       const data = await res.json();
 
       // Check if data is an array before processing
       if (Array.isArray(data)) {
-        setRepos(sortReposByCustomOrder(data).slice(0, 9));
+        const sortedRepos = sortReposByCustomOrder(data).slice(0, 9);
+
+        const reposWithCommits = await Promise.all(
+          sortedRepos.map(async (repo: any) => {
+            const commitStats = await getRepoCommitStats(repo.name);
+            return {
+              ...repo,
+              commitCount: commitStats.userCommitCount,
+              totalCommitCount: commitStats.totalCommitCount,
+            };
+          }),
+        );
+
+        setRepos(reposWithCommits);
       } else {
         console.error("GitHub API returned non-array data:", data);
         setRepos([]);
@@ -62,6 +78,47 @@ export default function Github() {
   useEffect(() => {
     fetchData();
   }, []);
+
+  const getRepoCommitStats = async (repoName: string) => {
+    try {
+      const contributorsRes = await fetch(
+        `https://api.github.com/repos/${GITHUB_USERNAME}/${repoName}/contributors?per_page=100`,
+      );
+
+      if (!contributorsRes.ok) {
+        return { userCommitCount: null, totalCommitCount: null };
+      }
+
+      const contributorsData = await contributorsRes.json();
+      if (!Array.isArray(contributorsData)) {
+        return { userCommitCount: null, totalCommitCount: null };
+      }
+
+      const currentUserContributions = contributorsData.find(
+        (contributor: any) =>
+          contributor?.login?.toLowerCase() === GITHUB_USERNAME.toLowerCase(),
+      );
+
+      const totalCommitCount = contributorsData.reduce(
+        (sum: number, contributor: any) => {
+          const contributions =
+            typeof contributor?.contributions === "number"
+              ? contributor.contributions
+              : 0;
+          return sum + contributions;
+        },
+        0,
+      );
+
+      return {
+        userCommitCount: currentUserContributions?.contributions ?? 0,
+        totalCommitCount,
+      };
+    } catch (error) {
+      console.error(`Error fetching commit count for ${repoName}:`, error);
+      return { userCommitCount: null, totalCommitCount: null };
+    }
+  };
 
   return (
     <Container mt={50} mb={50} px="xl" size="xl">
@@ -90,6 +147,8 @@ export default function Github() {
                     created_at={repo.created_at}
                     stargazers_count={repo.stargazers_count}
                     forks_count={repo.forks_count}
+                    commit_count={repo.commitCount}
+                    total_commit_count={repo.totalCommitCount}
                   />
                 </Grid.Col>
               ))
