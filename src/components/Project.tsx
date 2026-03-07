@@ -12,6 +12,35 @@ import RepositoryCard from "./RepositoryCard";
 export default function Github() {
   const [repos, setRepos] = useState<any>([]);
 
+  const projectOrder = (github as any).projectOrder || [];
+
+  const sortReposByCustomOrder = (repositories: any[]) => {
+    const orderMap = new Map(
+      projectOrder.map((name: string, index: number) => [
+        name.toLowerCase(),
+        index,
+      ]),
+    );
+
+    return [...repositories].sort((a: any, b: any) => {
+      const aName = a?.name?.toLowerCase() || "";
+      const bName = b?.name?.toLowerCase() || "";
+      const aOrder = orderMap.has(aName)
+        ? (orderMap.get(aName) as number)
+        : Number.MAX_SAFE_INTEGER;
+      const bOrder = orderMap.has(bName)
+        ? (orderMap.get(bName) as number)
+        : Number.MAX_SAFE_INTEGER;
+
+      if (aOrder !== bOrder) {
+        return aOrder - bOrder;
+      }
+
+      // Keep unspecified repositories in a stable alphabetical order.
+      return aName.localeCompare(bName);
+    });
+  };
+
   const fetchData = async () => {
     try {
       const res = await fetch("https://api.github.com/users/ZananVirani/repos");
@@ -19,11 +48,7 @@ export default function Github() {
 
       // Check if data is an array before processing
       if (Array.isArray(data)) {
-        setRepos(
-          data
-            .sort((a: any, b: any) => b.stargazers_count - a.stargazers_count)
-            .slice(0, 9),
-        );
+        setRepos(sortReposByCustomOrder(data).slice(0, 9));
       } else {
         console.error("GitHub API returned non-array data:", data);
         setRepos([]);

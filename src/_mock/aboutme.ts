@@ -21,7 +21,7 @@ export const aboutMe = {
   details: [
     {
       id: 1,
-      text: ` I'm Zanan Virani, a ${getAge()}-year old programmer from Markham, Canada.`,
+      text: `I'm Zanan Virani, a ${getAge()}-year old positive, ambitious, and analytical problem-solver from Markham, Canada.`,
       icon: "👋",
     },
     {
@@ -30,8 +30,13 @@ export const aboutMe = {
       icon: "🎓",
     },
     {
+      id: 11,
+      text: "",
+      icon: "",
+    },
+    {
       id: 3,
-      text: "I love building things — whether it’s mobile apps, full-stack web apps, or just fun side projects that solve real problems.",
+      text: "I love tackling meaningful, real-world challenges and turning ambiguous ideas into clear, practical outcomes.",
       icon: "🛠️",
     },
     {
@@ -41,29 +46,37 @@ export const aboutMe = {
     },
     {
       id: 4,
-      text: "I'm a fast learner who thrives in new environments — no matter how tough the obstacle, I tackle it with curiosity, grit, and a positive attitude.",
+      text: "I'm a fast learner who thrives in new environments; no matter how tough the obstacle, I tackle it with curiosity, grit, and a positive attitude.",
       icon: "💪",
     },
     {
+      id: 12,
+      text: "",
+      icon: "",
+    },
+    {
       id: 6,
-      text: `
-              My primary fields of interest are software engineering, quantitative development, machine learning, and data science.
-           `,
+      text: `My primary fields of interest are product management, tech/strategy consulting, solutions architecture, and software engineering.`,
       icon: "🔎",
     },
     {
       id: 7,
-      text: " I'm fluent in many programming languages, including C++, Python, Java, and more!",
+      text: "I’m open to any role that challenges me to think deeply, collaborate with people, and solve complex real-world problems.",
       icon: "💻",
     },
     {
+      id: 10,
+      text: "",
+      icon: "",
+    },
+    {
       id: 8,
-      text: "In my free time, I enjoy hiking, doing Brazilian jiu-jitsu, playing sports, gaming, and watching movies or shows — I like to stay active and have fun!",
+      text: "In my free time, I like to stay active and have fun! I enjoy hiking, Brazilian jiu-jitsu, sports, gaming, and watching movies or shows.",
       icon: "🌟",
     },
     {
       id: 9,
-      text: "I love meeting new people and sharing ideas — whether you're into tech or just want to chat, feel free to reach out! I promise I don't bite 🐶",
+      text: "I love meeting new people and sharing ideas. If you want to chat, feel free to reach out! I promise I don't bite 🐶",
       icon: "🤝",
     },
   ],

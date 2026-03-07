@@ -1,5 +1,16 @@
 {
   "title": "GitHub profile details",
   "contribution": "Contribution graph",
-  "project": "Projects"
+  "project": "Projects",
+  "projectOrder": [
+    "IPSFellowshipPRD",
+    "PrivInspect",
+    "Melofy",
+    "recipe.it",
+    "CafProject",
+    "ai-contribution-tracker",
+    "Black-Scholes-Options-Pricer",
+    "PetGame",
+    "24-ues-stationbook"
+  ]
 }
