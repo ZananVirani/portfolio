@@ -21,6 +21,8 @@ export const getTagColor = (type: string) => {
     return "#FFD43B";
   } else if (type === "typescript") {
     return "#3178c6";
+  } else if (type === "case study") {
+    return "#ff6347";
   } else {
     console.log(type);
   }

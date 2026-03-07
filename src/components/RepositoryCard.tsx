@@ -13,7 +13,7 @@ import { getTagColor } from "../utils/getTagColor";
 // ------------------------------------------------------
 
 const mappings: Record<string, string[]> = {
-  IPSFellowshipPRD: [],
+  IPSFellowshipPRD: ["case study"],
   "ai-contribution-tracker": ["next", "fastapi"],
   "Black-Scholes-Options-Pricer": ["c++"],
   CafProject: ["react-native", "express"],
@@ -22,6 +22,7 @@ const mappings: Record<string, string[]> = {
   portfolio: ["react"],
   "recipe.it": ["next", "fastapi"],
   PrivInspect: ["typescript", "python"],
+  "24-ues-stationbook": ["react-native", "express"],
 };
 
 type RepositoryCardProps = {
@@ -59,12 +60,14 @@ export default function RepositoryCard({
       ? Math.min((commit_count / total_commit_count) * 100, 100)
       : null;
 
+  const languageBadges = renderLanguage();
+
   return (
     <motion.div whileHover={{ y: -5 }}>
       <Box
         sx={(theme: any) => ({
           padding: theme.spacing.md,
-          maxHeight: 230,
+          maxHeight: 250,
           minHeight: 195,
           borderRadius: 25,
           // marginTop: theme.spacing.sm,
@@ -82,34 +85,37 @@ export default function RepositoryCard({
         onClick={(e: any) => handleLinkClick(e, url)}
       >
         <Group>
-          <Group>
-            <Group>
+          <Box>
+            <Group spacing={8}>
               <BrandGithub />
               <Text size="md" weight={500} lineClamp={1}>
                 {title}
               </Text>
             </Group>
-            <Group position="apart">
-              {/* <Group>
-                {forks_count && (
+
+            {languageBadges.length > 0 && (
+              <Group mt={8} spacing={6}>
+                {/* <Group>
+                  {forks_count && (
+                    <Group>
+                      <GitFork size={18} color={"red"} />
+                      {forks_count}
+                    </Group>
+                  )}
                   <Group>
-                    <GitFork size={18} color={"red"} />
-                    {forks_count}
+                    <Star size={18} color={"orange"} />
+                    {stargazers_count}
                   </Group>
-                )}
-                <Group>
-                  <Star size={18} color={"orange"} />
-                  {stargazers_count}
-                </Group>
-              </Group> */}
-              {renderLanguage()}
-            </Group>
-          </Group>
-          <Text lineClamp={4}>
-            <TypographyStylesProvider>
-              <Text size="xs">{description}</Text>
-            </TypographyStylesProvider>
-          </Text>
+                </Group> */}
+                {languageBadges}
+              </Group>
+            )}
+          </Box>
+          <TypographyStylesProvider>
+            <Text size="xs" lineClamp={4} sx={{ lineHeight: 1.35, minHeight: "5.4em" }}>
+              {description.trim()}
+            </Text>
+          </TypographyStylesProvider>
 
           {typeof commit_count === "number" && (
             <Box mt={5}>

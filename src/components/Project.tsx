@@ -135,13 +135,14 @@ export default function Github() {
         >
           {github.project}
         </Title>
+
         <Grid>
           {repos.length > 0
             ? repos.map((repo: any, index: number) => (
                 <Grid.Col sm={12} md={6} lg={4} key={index}>
                   <RepositoryCard
                     title={repo.name}
-                    description={repo.description}
+                    description={repo.description || ""}
                     language={repo.language}
                     url={repo.svn_url}
                     created_at={repo.created_at}
