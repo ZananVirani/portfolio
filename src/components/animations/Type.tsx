@@ -1,4 +1,3 @@
-import React from "react";
 import Typewriter from "typewriter-effect";
 // import useLocales from "../../hooks/useLocales";
 
@@ -8,10 +7,13 @@ function Type() {
     <Typewriter
       options={{
         strings: [
-          "Software Engineer",
           "Curious Learner",
-          "Full-Stack Dev",
-          "Driven by Passion",
+          "Positive",
+          "Real-World Problem Solver",
+          "Aspiring Product Manager",
+          "Effective Communicator",
+          "Analytical Thinker",
+          "Team Player",
         ],
         autoStart: true,
         loop: true,
