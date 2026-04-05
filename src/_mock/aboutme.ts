@@ -56,7 +56,7 @@ export const aboutMe = {
     },
     {
       id: 6,
-      text: `My primary fields of interest are product management, tech/strategy consulting, solutions architecture, and software engineering.`,
+      text: `My primary fields of interest are product management and tech/strategy consulting.`,
       icon: "🔎",
     },
     {

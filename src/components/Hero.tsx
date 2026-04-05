@@ -117,7 +117,7 @@ const useStyles: any = createStyles((theme) => ({
       #F4E06D 25%,
       #FF9F29 50%,
       #F4E06D 75%,
-      #FF9F29 100%`
+      #FF9F29 100%`,
     ),
     backgroundSize: "400%",
     fontSize: 64 / 14 + "rem",
@@ -139,7 +139,7 @@ const useStyles: any = createStyles((theme) => ({
         #F4E06D 25%,
         #FF9F29 50%,
         #F4E06D 75%,
-        #FF9F29 100%`
+        #FF9F29 100%`,
     ),
     backgroundSize: "400%",
     [theme.fn.smallerThan("sm")]: {
@@ -188,8 +188,8 @@ export default function Hero() {
                       <m.span key={index} variants={getVariant("slideInUp")}>
                         {letter}
                       </m.span>
-                    )
-                  )
+                    ),
+                  ),
                 )}
               </MotionContainer>
               <m.div variants={varFade().in}>
@@ -232,7 +232,7 @@ export default function Hero() {
                   size="md"
                   className={classes.control}
                   component={"a"}
-                  href="https://drive.google.com/file/d/1SBcVmwU7v8eO7geWRBZVydg86Q9FN_FH/view?usp=sharing"
+                  href="https://drive.google.com/file/d/1C9RpUDW-4tt9OkGId3reAlDERpwWDId9/view?usp=sharing"
                   target={"_blank"}
                   onClick={() =>
                     gaEventTracker({
